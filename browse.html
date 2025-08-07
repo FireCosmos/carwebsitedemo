@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Cars - AutoHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="browse-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car"></i>
+                <span>AutoHub</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="browse.html" class="nav-link active">Browse</a></li>
+                <li><a href="#sell" class="nav-link">Sell Your Car</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Browse Content -->
+    <div class="browse-container">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <div class="filters-header">
+                <h3>Refine Search</h3>
+                <button class="clear-filters">Clear All</button>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-section">
+                <h4>Price Range</h4>
+                <div class="price-inputs">
+                    <input type="number" placeholder="Min" id="min-price">
+                    <span>to</span>
+                    <input type="number" placeholder="Max" id="max-price">
+                </div>
+                <div class="price-slider">
+                    <input type="range" min="0" max="100000" value="50000" class="price-range">
+                    <div class="price-labels">
+                        <span>£0</span>
+                        <span>£100k</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Make & Model -->
+            <div class="filter-section">
+                <h4>Make</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="volkswagen"> Volkswagen</label>
+                    <label><input type="checkbox" value="ford"> Ford</label>
+                    <label><input type="checkbox" value="audi"> Audi</label>
+                    <label><input type="checkbox" value="vauxhall"> Vauxhall</label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Model</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="golf-r"> Golf R</label>
+                    <label><input type="checkbox" value="mustang"> Mustang</label>
+                    <label><input type="checkbox" value="rs3"> RS3</label>
+                    <label><input type="checkbox" value="viva"> Viva</label>
+                </div>
+            </div>
+
+            <!-- Year Range -->
+            <div class="filter-section">
+                <h4>Year</h4>
+                <div class="year-inputs">
+                    <select id="min-year">
+                        <option value="">From</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                    </select>
+                    <select id="max-year">
+                        <option value="">To</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Mileage -->
+            <div class="filter-section">
+                <h4>Mileage</h4>
+                <div class="mileage-inputs">
+                    <input type="number" placeholder="Min" id="min-mileage">
+                    <span>to</span>
+                    <input type="number" placeholder="Max" id="max-mileage">
+                </div>
+            </div>
+
+            <!-- Fuel Type -->
+            <div class="filter-section">
+                <h4>Fuel Type</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="petrol"> Petrol</label>
+                    <label><input type="checkbox" value="diesel"> Diesel</label>
+                    <label><input type="checkbox" value="hybrid"> Hybrid</label>
+                    <label><input type="checkbox" value="electric"> Electric</label>
+                </div>
+            </div>
+
+            <!-- Transmission -->
+            <div class="filter-section">
+                <h4>Transmission</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="manual"> Manual</label>
+                    <label><input type="checkbox" value="automatic"> Automatic</label>
+                </div>
+            </div>
+
+            <!-- Body Type -->
+            <div class="filter-section">
+                <h4>Body Type</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="hatchback"> Hatchback</label>
+                    <label><input type="checkbox" value="saloon"> Saloon</label>
+                    <label><input type="checkbox" value="suv"> SUV</label>
+                    <label><input type="checkbox" value="coupe"> Coupe</label>
+                    <label><input type="checkbox" value="convertible"> Convertible</label>
+                </div>
+            </div>
+
+            <!-- Engine Size -->
+            <div class="filter-section">
+                <h4>Engine Size</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="1.0-1.5"> 1.0L - 1.5L</label>
+                    <label><input type="checkbox" value="1.6-2.0"> 1.6L - 2.0L</label>
+                    <label><input type="checkbox" value="2.1-3.0"> 2.1L - 3.0L</label>
+                    <label><input type="checkbox" value="3.1+"> 3.1L+</label>
+                </div>
+            </div>
+
+            <!-- Colour -->
+            <div class="filter-section">
+                <h4>Colour</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="white"> White</label>
+                    <label><input type="checkbox" value="black"> Black</label>
+                    <label><input type="checkbox" value="silver"> Silver</label>
+                    <label><input type="checkbox" value="blue"> Blue</label>
+                    <label><input type="checkbox" value="red"> Red</label>
+                    <label><input type="checkbox" value="green"> Green</label>
+                </div>
+            </div>
+
+            <!-- Number of Doors -->
+            <div class="filter-section">
+                <h4>Number of Doors</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="2"> 2 Doors</label>
+                    <label><input type="checkbox" value="3"> 3 Doors</label>
+                    <label><input type="checkbox" value="4"> 4 Doors</label>
+                    <label><input type="checkbox" value="5"> 5 Doors</label>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="filter-section">
+                <h4>Location</h4>
+                <input type="text" placeholder="Enter postcode or town" id="location-filter">
+            </div>
+
+            <!-- Seller Type -->
+            <div class="filter-section">
+                <h4>Seller Type</h4>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="private"> Private Seller</label>
+                    <label><input type="checkbox" value="dealer"> Dealer</label>
+                    <label><input type="checkbox" value="trade"> Trade</label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="browse-main">
+            <div class="browse-header">
+                <div class="results-info">
+                    <h2>Browse Cars</h2>
+                    <p><span id="results-count">4</span> cars found</p>
+                </div>
+                <div class="sort-controls">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="relevance">Relevance</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="year-new">Year: Newest First</option>
+                        <option value="year-old">Year: Oldest First</option>
+                        <option value="mileage-low">Mileage: Low to High</option>
+                        <option value="mileage-high">Mileage: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="listings-grid" id="browse-listings">
+                <!-- Car listings will be populated by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AutoHub</h3>
+                    <p>Your trusted partner in finding the perfect vehicle.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="browse.html">Browse Cars</a></li>
+                        <li><a href="#sell">Sell Your Car</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with the latest car listings</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AutoHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="browse-script.js"></script>
+</body>
+</html> 
